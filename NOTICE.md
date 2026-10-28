@@ -2,7 +2,7 @@
 
 ## CVE List
 
-The tables rebuilt by `src/extract_cve_records.py` and `src/extract_snapshot.py`, and the CVE identifiers in the result files, are derived from the CVE List (release `2026-09-25_all_CVEs_at_midnight` of <https://github.com/CVEProject/cvelistV5>).
+The tables written by `src/extract_cve_records.py` and `src/extract_snapshot.py` (included in the Zenodo archive, doi:10.5281/zenodo.23718895), and the CVE identifiers in the result files, are derived from the CVE List (release `2026-09-25_all_CVEs_at_midnight` of <https://github.com/CVEProject/cvelistV5>).
 
 Copyright © 1999-2026, The MITRE Corporation.
 
@@ -12,7 +12,7 @@ CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive, no-cha
 
 ## National Vulnerability Database
 
-`data/nvd_records.parquet` is extracted from the NVD JSON 2.0 data feeds (<https://nvd.nist.gov/vuln/data-feeds>), downloaded on 26 October 2026. This product uses data from the NVD API but is not endorsed or certified by the NVD.
+`data/nvd_records.parquet` is extracted from the NVD JSON 2.0 data feeds (<https://nvd.nist.gov/vuln/data-feeds>), downloaded on 26 October 2026. `data/nvd_cvss_history.parquet` is extracted from the NVD CVE Change History API (<https://services.nvd.nist.gov/rest/json/cvehistory/2.0>). This product uses data from the NVD API but is not endorsed or certified by the NVD.
 
 ## CISA Vulnrichment
 
@@ -20,4 +20,4 @@ CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive, no-cha
 
 ## Encoder predictions
 
-`data/encoder_predictions/` is taken from the replication package of an earlier study by the same authors (doi:10.5281/zenodo.23276178, MIT License).
+`data/encoder_predictions/` is taken from the replication package doi:10.5281/zenodo.23276178 (MIT License).

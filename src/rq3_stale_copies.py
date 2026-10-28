@@ -16,8 +16,11 @@ Natural experiment on records whose CNA container changed after CISA's SSVC deci
   * sensitivity 3 (timing): only records whose first commit carrying the decision is at most 2 hours after the SSVC
     timestamp (the repository is updated about hourly), so the order follows from the git history alone;
   * statistic: among records where the two versions imply different SSVC values, agreement of SSVC with the seen
-    version minus agreement with the snapshot version; 95% percentile bootstrap interval (10,000 resamples, seed
-    20261026).
+    version minus agreement with the snapshot version; 95% percentile bootstrap interval that resamples CNAs, since
+    decisions on records of the same CNA are not independent (10,000 resamples, seed 20261026);
+  * the agreement is also reported for each direction of a crossing (e.g. seen version partial and snapshot version
+    total, and the reverse), which separates following the seen version from following CISA's most frequent values;
+  * the primary analysis is repeated without each of the five CNAs with the most records in it.
 All analyses are repeated without the records whose CNA container was written by VulDB.
 
 Inputs: data/asof_versions.jsonl, data/snapshot_records.parquet
@@ -88,24 +91,56 @@ def norm(s):
     return " ".join(s.split()) if isinstance(s, str) else None
 
 
-def boot_diff(agree_seen, agree_final, n=10000):
-    a, b = np.asarray(agree_seen, float), np.asarray(agree_final, float)
-    if len(a) == 0:
+def boot_diff(agree_seen, agree_final, groups=None, n=10000):
+    """Mean of agree_seen minus agree_final with a 95% percentile bootstrap interval.
+
+    With groups, whole groups (CNAs) are resampled; with no groups or a single group, records are resampled.
+    """
+    d = np.asarray(agree_seen, float) - np.asarray(agree_final, float)
+    if len(d) == 0:
         return None, (None, None)
-    idx = RNG.integers(0, len(a), size=(n, len(a)))
-    d = a[idx].mean(1) - b[idx].mean(1)
-    return float(a.mean() - b.mean()), (float(np.percentile(d, 2.5)), float(np.percentile(d, 97.5)))
+    codes = pd.factorize(pd.Series(groups))[0] if groups is not None else None
+    if codes is None or codes.max() < 1:
+        idx = RNG.integers(0, len(d), size=(n, len(d)))
+        boots = d[idx].mean(1)
+    else:
+        sums, counts = np.bincount(codes, weights=d), np.bincount(codes)
+        idx = RNG.integers(0, len(sums), size=(n, len(sums)))
+        boots = sums[idx].sum(1) / counts[idx].sum(1)
+    return float(d.mean()), (float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5)))
 
 
-def compare(df, seen_col, final_col, ssvc_col, positive):
-    """Agreement of SSVC with the value implied by the seen vs the snapshot version, where the two differ."""
+def compare(df, seen_col, final_col, ssvc_col, positive, cluster="cna"):
+    """Agreement of SSVC with the value implied by the seen vs the snapshot version, where the two differ.
+
+    The interval resamples the groups in column `cluster` (None: records). by_direction splits the records by the
+    value implied by the seen version.
+    """
     x = df[df[seen_col].notna() & df[final_col].notna() & (df[seen_col] != df[final_col])]
     agree_seen = (x[seen_col] == x[ssvc_col]).astype(int)
     agree_final = (x[final_col] == x[ssvc_col]).astype(int)
-    diff, (lo, hi) = boot_diff(agree_seen, agree_final)
-    return {"n": int(len(x)), "agree_seen": float(agree_seen.mean()) if len(x) else None,
+    groups = x[cluster].fillna("unknown").to_numpy() if cluster else None
+    diff, (lo, hi) = boot_diff(agree_seen, agree_final, groups)
+    by_direction = {}
+    for value, g in x.groupby(seen_col):
+        key = f"seen {value}, snapshot {g[final_col].iloc[0]}"
+        by_direction[key] = {"n": int(len(g)), "agree_seen": float((g[seen_col] == g[ssvc_col]).mean()),
+                             "agree_snapshot": float((g[final_col] == g[ssvc_col]).mean())}
+    return {"n": int(len(x)), "n_clusters": int(len(set(groups))) if cluster and len(x) else None,
+            "agree_seen": float(agree_seen.mean()) if len(x) else None,
             "agree_snapshot": float(agree_final.mean()) if len(x) else None,
-            "diff": diff, "ci95": [lo, hi]}
+            "diff": diff, "ci95": [lo, hi], "by_direction": by_direction}
+
+
+def leave_one_cna_out(df, seen_col, final_col, ssvc_col, k=5):
+    """Difference (agreement with seen minus snapshot) without each of the k CNAs with the most compared records."""
+    x = df[df[seen_col].notna() & df[final_col].notna() & (df[seen_col] != df[final_col])]
+    d = (x[seen_col] == x[ssvc_col]).astype(int) - (x[final_col] == x[ssvc_col]).astype(int)
+    out = {}
+    for cna, n in x.cna.value_counts().head(k).items():
+        keep = (x.cna != cna).to_numpy()
+        out[cna] = {"n_removed": int(n), "diff": float(d[keep].mean())}
+    return out
 
 
 def majority_map(records, key_fn, ssvc_col):
@@ -164,6 +199,10 @@ def main():
             "technical_impact": compare(data, "seen_ti", "final_ti", "ssvc_technical_impact", "total"),
             "automatable": compare(data, "seen_au", "final_au", "ssvc_automatable", "yes"),
         }
+    out["main_desc_unchanged_leave_one_cna_out"] = {
+        "technical_impact": leave_one_cna_out(main_set, "seen_ti", "final_ti", "ssvc_technical_impact"),
+        "automatable": leave_one_cna_out(main_set, "seen_au", "final_au", "ssvc_automatable"),
+    }
 
     # sensitivity: data-driven mappings estimated on non-candidate SSVC records
     ts = pd.to_datetime(rec.ssvc_timestamp, utc=True, format="mixed")

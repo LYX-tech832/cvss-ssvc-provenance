@@ -1,0 +1,689 @@
+{
+ "sample": 36725,
+ "status": {
+  "matched": 32996,
+  "before window": 3722,
+  "unknown": 7
+ },
+ "timing": {
+  "NVD later": 19013,
+  "NVD first": 17705,
+  "unknown": 7
+ },
+ "matched_event": {
+  "Initial Analysis": 32296,
+  "Modified Analysis": 371,
+  "Reanalysis": 329
+ },
+ "lag_days_nvd_minus_decision": {
+  "p10": -817.8294539243345,
+  "p25": -505.21629365492186,
+  "median": 1.5265714632233796,
+  "p75": 17.22952938614294,
+  "p90": 201.944507573206
+ },
+ "groups": {
+  "NVD first": {
+   "n": 17705,
+   "n_vuldb": 1946,
+   "disagreement": {
+    "technical_impact": {
+     "n": 3110,
+     "n_clusters": 165,
+     "agree_seen": 0.8035369774919614,
+     "agree_snapshot": 0.1964630225080386,
+     "diff": 0.6070739549839228,
+     "ci95": [
+      0.435687693331787,
+      0.7369416465361056
+     ],
+     "by_direction": {
+      "seen partial, snapshot total": {
+       "n": 2696,
+       "agree_seen": 0.7956231454005934,
+       "agree_snapshot": 0.20437685459940652
+      },
+      "seen total, snapshot partial": {
+       "n": 414,
+       "agree_seen": 0.855072463768116,
+       "agree_snapshot": 0.14492753623188406
+      }
+     }
+    },
+    "automatable": {
+     "n": 2365,
+     "n_clusters": 140,
+     "agree_seen": 0.908245243128964,
+     "agree_snapshot": 0.09175475687103594,
+     "diff": 0.8164904862579281,
+     "ci95": [
+      0.7289241144286733,
+      0.8590823870995039
+     ],
+     "by_direction": {
+      "seen no, snapshot yes": {
+       "n": 1843,
+       "agree_seen": 0.9446554530656538,
+       "agree_snapshot": 0.05534454693434617
+      },
+      "seen yes, snapshot no": {
+       "n": 522,
+       "agree_seen": 0.7796934865900383,
+       "agree_snapshot": 0.22030651340996169
+      }
+     }
+    }
+   },
+   "tiers": {
+    "exposed": {
+     "main_actual_vs_nvd": {
+      "n": 17705,
+      "changed": 0.2959051115504095,
+      "changed_ci95": [
+       0.2563381082193033,
+       0.3388382936550246
+      ],
+      "faster": 0.22637672973736234,
+      "faster_ci95": [
+       0.1918326953449604,
+       0.2657555359490374
+      ],
+      "slower": 0.06952838181304716,
+      "slower_ci95": [
+       0.05933698482131806,
+       0.08209304435690415
+      ],
+      "transitions": {
+       "14 days -> 3 days": 957,
+       "14 days -> 3 days + forensic triage": 5,
+       "14 days -> 60 days": 899,
+       "3 days -> 14 days": 255,
+       "3 days -> 3 days + forensic triage": 6,
+       "3 days -> 60 days": 61,
+       "3 days + forensic triage -> 14 days": 6,
+       "3 days + forensic triage -> 3 days": 10,
+       "60 days -> 14 days": 2357,
+       "60 days -> 3 days": 683
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 17705,
+      "changed": 0.25896639367410335,
+      "changed_ci95": [
+       0.2208722964702235,
+       0.3021381371497761
+      ],
+      "faster": 0.21287771815871223,
+      "faster_ci95": [
+       0.17942763929548236,
+       0.2525682117780702
+      ],
+      "slower": 0.046088675515391135,
+      "slower_ci95": [
+       0.036910049417524154,
+       0.05671995425368318
+      ],
+      "transitions": {
+       "14 days -> 3 days": 935,
+       "14 days -> 3 days + forensic triage": 10,
+       "14 days -> 60 days": 584,
+       "3 days -> 14 days": 206,
+       "3 days -> 3 days + forensic triage": 14,
+       "3 days -> 60 days": 19,
+       "3 days + forensic triage -> 14 days": 4,
+       "3 days + forensic triage -> 3 days": 3,
+       "60 days -> 14 days": 2141,
+       "60 days -> 3 days": 669
+      }
+     }
+    },
+    "not exposed": {
+     "main_actual_vs_nvd": {
+      "n": 17705,
+      "changed": 0.17695566224230444,
+      "changed_ci95": [
+       0.1455454918139165,
+       0.20959789899694137
+      ],
+      "faster": 0.1487150522451285,
+      "faster_ci95": [
+       0.12152644098614576,
+       0.17868904537350375
+      ],
+      "slower": 0.02824060999717594,
+      "slower_ci95": [
+       0.0203113284494786,
+       0.037798592899447245
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 22,
+       "3 days + forensic triage -> 14 days": 17,
+       "60 days -> next upgrade": 483,
+       "next upgrade -> 60 days": 2611
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 17705,
+      "changed": 0.1343688223665631,
+      "changed_ci95": [
+       0.10631178139597133,
+       0.16555150942086924
+      ],
+      "faster": 0.10477266308952274,
+      "faster_ci95": [
+       0.08049269663961604,
+       0.13318471845178662
+      ],
+      "slower": 0.029596159277040384,
+      "slower_ci95": [
+       0.021401226177735478,
+       0.03931854948835198
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 19,
+       "3 days + forensic triage -> 14 days": 8,
+       "60 days -> next upgrade": 516,
+       "next upgrade -> 60 days": 1836
+      }
+     }
+    }
+   }
+  },
+  "NVD first, without VulDB": {
+   "n": 15759,
+   "n_vuldb": 0,
+   "disagreement": {
+    "technical_impact": {
+     "n": 2146,
+     "n_clusters": 164,
+     "agree_seen": 0.749767008387698,
+     "agree_snapshot": 0.25023299161230195,
+     "diff": 0.4995340167753961,
+     "ci95": [
+      0.41864642683511893,
+      0.6022113801193704
+     ],
+     "by_direction": {
+      "seen partial, snapshot total": {
+       "n": 1732,
+       "agree_seen": 0.7245958429561201,
+       "agree_snapshot": 0.2754041570438799
+      },
+      "seen total, snapshot partial": {
+       "n": 414,
+       "agree_seen": 0.855072463768116,
+       "agree_snapshot": 0.14492753623188406
+      }
+     }
+    },
+    "automatable": {
+     "n": 1701,
+     "n_clusters": 139,
+     "agree_seen": 0.9000587889476779,
+     "agree_snapshot": 0.09994121105232216,
+     "diff": 0.8001175778953556,
+     "ci95": [
+      0.7043838017342107,
+      0.8602159397792757
+     ],
+     "by_direction": {
+      "seen no, snapshot yes": {
+       "n": 1223,
+       "agree_seen": 0.9517579721995094,
+       "agree_snapshot": 0.0482420278004906
+      },
+      "seen yes, snapshot no": {
+       "n": 478,
+       "agree_seen": 0.7677824267782427,
+       "agree_snapshot": 0.23221757322175732
+      }
+     }
+    }
+   },
+   "tiers": {
+    "exposed": {
+     "main_actual_vs_nvd": {
+      "n": 15759,
+      "changed": 0.2637223174059268,
+      "changed_ci95": [
+       0.22995950401423476,
+       0.3005895026700401
+      ],
+      "faster": 0.18808300019036742,
+      "faster_ci95": [
+       0.16264129140519618,
+       0.21675306111061643
+      ],
+      "slower": 0.07563931721555936,
+      "slower_ci95": [
+       0.06337788717930931,
+       0.0911928189435154
+      ],
+      "transitions": {
+       "14 days -> 3 days": 766,
+       "14 days -> 3 days + forensic triage": 5,
+       "14 days -> 60 days": 871,
+       "3 days -> 14 days": 254,
+       "3 days -> 3 days + forensic triage": 6,
+       "3 days -> 60 days": 51,
+       "3 days + forensic triage -> 14 days": 6,
+       "3 days + forensic triage -> 3 days": 10,
+       "60 days -> 14 days": 1950,
+       "60 days -> 3 days": 237
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 15759,
+      "changed": 0.21949362269179518,
+      "changed_ci95": [
+       0.1900641063229492,
+       0.25161949849080156
+      ],
+      "faster": 0.16955390570467668,
+      "faster_ci95": [
+       0.14768999034331845,
+       0.1939974169469191
+      ],
+      "slower": 0.04993971698711847,
+      "slower_ci95": [
+       0.03927640489755213,
+       0.06336951913399784
+      ],
+      "transitions": {
+       "14 days -> 3 days": 729,
+       "14 days -> 3 days + forensic triage": 10,
+       "14 days -> 60 days": 556,
+       "3 days -> 14 days": 205,
+       "3 days -> 3 days + forensic triage": 12,
+       "3 days -> 60 days": 19,
+       "3 days + forensic triage -> 14 days": 4,
+       "3 days + forensic triage -> 3 days": 3,
+       "60 days -> 14 days": 1724,
+       "60 days -> 3 days": 197
+      }
+     }
+    },
+    "not exposed": {
+     "main_actual_vs_nvd": {
+      "n": 15759,
+      "changed": 0.15660892188590647,
+      "changed_ci95": [
+       0.12765966503791773,
+       0.1885776218457897
+      ],
+      "faster": 0.1283076337331049,
+      "faster_ci95": [
+       0.10387734566221166,
+       0.1560698676565595
+      ],
+      "slower": 0.028301288152801574,
+      "slower_ci95": [
+       0.020160239583894714,
+       0.0393087014134092
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 21,
+       "3 days + forensic triage -> 14 days": 17,
+       "60 days -> next upgrade": 429,
+       "next upgrade -> 60 days": 2001
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 15759,
+      "changed": 0.10869979059584998,
+      "changed_ci95": [
+       0.08564225394908734,
+       0.13493558326827
+      ],
+      "faster": 0.07824100513992005,
+      "faster_ci95": [
+       0.05995644575317971,
+       0.0996747368374088
+      ],
+      "slower": 0.030458785455929945,
+      "slower_ci95": [
+       0.021558180191979165,
+       0.042152888436742676
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 17,
+       "3 days + forensic triage -> 14 days": 8,
+       "60 days -> next upgrade": 472,
+       "next upgrade -> 60 days": 1216
+      }
+     }
+    }
+   }
+  },
+  "NVD later": {
+   "n": 19013,
+   "n_vuldb": 6489,
+   "disagreement": {
+    "technical_impact": {
+     "n": 6004,
+     "n_clusters": 143,
+     "agree_seen": 0.8409393737508328,
+     "agree_snapshot": 0.15906062624916723,
+     "diff": 0.6818787475016655,
+     "ci95": [
+      0.2861108409881416,
+      0.7823933841179024
+     ],
+     "by_direction": {
+      "seen partial, snapshot total": {
+       "n": 5611,
+       "agree_seen": 0.8390661201211905,
+       "agree_snapshot": 0.16093387987880947
+      },
+      "seen total, snapshot partial": {
+       "n": 393,
+       "agree_seen": 0.8676844783715013,
+       "agree_snapshot": 0.13231552162849872
+      }
+     }
+    },
+    "automatable": {
+     "n": 2714,
+     "n_clusters": 133,
+     "agree_seen": 0.9480471628592484,
+     "agree_snapshot": 0.051952837140751655,
+     "diff": 0.8960943257184967,
+     "ci95": [
+      0.8270673059460244,
+      0.9263931252814953
+     ],
+     "by_direction": {
+      "seen no, snapshot yes": {
+       "n": 2447,
+       "agree_seen": 0.9795668165100122,
+       "agree_snapshot": 0.02043318348998774
+      },
+      "seen yes, snapshot no": {
+       "n": 267,
+       "agree_seen": 0.6591760299625468,
+       "agree_snapshot": 0.3408239700374532
+      }
+     }
+    }
+   },
+   "tiers": {
+    "exposed": {
+     "main_actual_vs_nvd": {
+      "n": 19013,
+      "changed": 0.43412402040708986,
+      "changed_ci95": [
+       0.38284440932664093,
+       0.4851369515304744
+      ],
+      "faster": 0.3697470152001262,
+      "faster_ci95": [
+       0.3111197008240248,
+       0.4270701902871426
+      ],
+      "slower": 0.06437700520696366,
+      "slower_ci95": [
+       0.05502992315872425,
+       0.0755121378762827
+      ],
+      "transitions": {
+       "14 days -> 3 days": 2338,
+       "14 days -> 60 days": 983,
+       "3 days -> 14 days": 199,
+       "3 days -> 3 days + forensic triage": 2,
+       "3 days -> 60 days": 31,
+       "3 days + forensic triage -> 14 days": 2,
+       "3 days + forensic triage -> 3 days": 9,
+       "60 days -> 14 days": 3597,
+       "60 days -> 3 days": 1093
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 19013,
+      "changed": 0.3931520538578867,
+      "changed_ci95": [
+       0.3293290156360647,
+       0.4563428787470163
+      ],
+      "faster": 0.363540735286383,
+      "faster_ci95": [
+       0.29539773638175437,
+       0.4308081976971086
+      ],
+      "slower": 0.029611318571503707,
+      "slower_ci95": [
+       0.023157091965938494,
+       0.037413553332821016
+      ],
+      "transitions": {
+       "14 days -> 3 days": 2436,
+       "14 days -> 3 days + forensic triage": 3,
+       "14 days -> 60 days": 461,
+       "3 days -> 14 days": 92,
+       "3 days -> 3 days + forensic triage": 4,
+       "3 days -> 60 days": 6,
+       "3 days + forensic triage -> 14 days": 1,
+       "3 days + forensic triage -> 3 days": 3,
+       "60 days -> 14 days": 3416,
+       "60 days -> 3 days": 1053
+      }
+     }
+    },
+    "not exposed": {
+     "main_actual_vs_nvd": {
+      "n": 19013,
+      "changed": 0.2022300531215484,
+      "changed_ci95": [
+       0.18214085096921145,
+       0.22291009030360912
+      ],
+      "faster": 0.18303266186293587,
+      "faster_ci95": [
+       0.1641136343147148,
+       0.20257453283757162
+      ],
+      "slower": 0.01919739125861253,
+      "slower_ci95": [
+       0.016164753516397644,
+       0.022846969635207735
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 5,
+       "3 days + forensic triage -> 14 days": 10,
+       "60 days -> next upgrade": 355,
+       "next upgrade -> 60 days": 3475
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 19013,
+      "changed": 0.14295482038605165,
+      "changed_ci95": [
+       0.1255654764368803,
+       0.16046903002289603
+      ],
+      "faster": 0.12885920159890601,
+      "faster_ci95": [
+       0.11167767781692843,
+       0.14610839463762185
+      ],
+      "slower": 0.014095618787145638,
+      "slower_ci95": [
+       0.011092639417101716,
+       0.017753854340730006
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 6,
+       "3 days + forensic triage -> 14 days": 3,
+       "60 days -> next upgrade": 265,
+       "next upgrade -> 60 days": 2444
+      }
+     }
+    }
+   }
+  },
+  "NVD later, without VulDB": {
+   "n": 12524,
+   "n_vuldb": 0,
+   "disagreement": {
+    "technical_impact": {
+     "n": 1870,
+     "n_clusters": 142,
+     "agree_seen": 0.6764705882352942,
+     "agree_snapshot": 0.3235294117647059,
+     "diff": 0.35294117647058826,
+     "ci95": [
+      0.2581739511078187,
+      0.4477186328075277
+     ],
+     "by_direction": {
+      "seen partial, snapshot total": {
+       "n": 1503,
+       "agree_seen": 0.6280771789753826,
+       "agree_snapshot": 0.37192282102461743
+      },
+      "seen total, snapshot partial": {
+       "n": 367,
+       "agree_seen": 0.8746594005449592,
+       "agree_snapshot": 0.12534059945504086
+      }
+     }
+    },
+    "automatable": {
+     "n": 1478,
+     "n_clusters": 132,
+     "agree_seen": 0.9309878213802436,
+     "agree_snapshot": 0.06901217861975643,
+     "diff": 0.8619756427604871,
+     "ci95": [
+      0.8165254009657799,
+      0.9107772003791221
+     ],
+     "by_direction": {
+      "seen no, snapshot yes": {
+       "n": 1231,
+       "agree_seen": 0.9845653939886271,
+       "agree_snapshot": 0.015434606011372868
+      },
+      "seen yes, snapshot no": {
+       "n": 247,
+       "agree_seen": 0.6639676113360324,
+       "agree_snapshot": 0.3360323886639676
+      }
+     }
+    }
+   },
+   "tiers": {
+    "exposed": {
+     "main_actual_vs_nvd": {
+      "n": 12524,
+      "changed": 0.31052379431491534,
+      "changed_ci95": [
+       0.28906744525134176,
+       0.33124346428559553
+      ],
+      "faster": 0.22221335036729478,
+      "faster_ci95": [
+       0.2025624583778696,
+       0.24210385566994577
+      ],
+      "slower": 0.08831044394762057,
+      "slower_ci95": [
+       0.07887501590797547,
+       0.09939394548439887
+      ],
+      "transitions": {
+       "14 days -> 3 days": 583,
+       "14 days -> 60 days": 928,
+       "3 days -> 14 days": 140,
+       "3 days -> 3 days + forensic triage": 2,
+       "3 days -> 60 days": 27,
+       "3 days + forensic triage -> 14 days": 2,
+       "3 days + forensic triage -> 3 days": 9,
+       "60 days -> 14 days": 1980,
+       "60 days -> 3 days": 218
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 12524,
+      "changed": 0.23977962312360268,
+      "changed_ci95": [
+       0.22212209877185074,
+       0.25724831403324866
+      ],
+      "faster": 0.19674225487064836,
+      "faster_ci95": [
+       0.18025337372781933,
+       0.21292751323290016
+      ],
+      "slower": 0.04303736825295433,
+      "slower_ci95": [
+       0.03546383732531286,
+       0.05213089277590818
+      ],
+      "transitions": {
+       "14 days -> 3 days": 492,
+       "14 days -> 3 days + forensic triage": 3,
+       "14 days -> 60 days": 441,
+       "3 days -> 14 days": 88,
+       "3 days -> 3 days + forensic triage": 3,
+       "3 days -> 60 days": 6,
+       "3 days + forensic triage -> 14 days": 1,
+       "3 days + forensic triage -> 3 days": 3,
+       "60 days -> 14 days": 1767,
+       "60 days -> 3 days": 199
+      }
+     }
+    },
+    "not exposed": {
+     "main_actual_vs_nvd": {
+      "n": 12524,
+      "changed": 0.19115298626636856,
+      "changed_ci95": [
+       0.1672473535726844,
+       0.21470931841075588
+      ],
+      "faster": 0.1707920792079208,
+      "faster_ci95": [
+       0.14836259311601085,
+       0.19340677952642457
+      ],
+      "slower": 0.02036090705844778,
+      "slower_ci95": [
+       0.01598959694277502,
+       0.025531174144434694
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 5,
+       "3 days + forensic triage -> 14 days": 10,
+       "60 days -> next upgrade": 245,
+       "next upgrade -> 60 days": 2134
+      }
+     },
+     "decomposition_cna_vs_nvd": {
+      "n": 12524,
+      "changed": 0.11825295432769084,
+      "changed_ci95": [
+       0.10169612787539965,
+       0.13532484210897988
+      ],
+      "faster": 0.09845097412967103,
+      "faster_ci95": [
+       0.0825068169175583,
+       0.11473426014049899
+      ],
+      "slower": 0.019801980198019802,
+      "slower_ci95": [
+       0.015974720774653197,
+       0.024115418024211032
+      ],
+      "transitions": {
+       "14 days -> 3 days + forensic triage": 5,
+       "3 days + forensic triage -> 14 days": 3,
+       "60 days -> next upgrade": 245,
+       "next upgrade -> 60 days": 1228
+      }
+     }
+    }
+   }
+  }
+ }
+}

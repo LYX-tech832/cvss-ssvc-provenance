@@ -6,7 +6,8 @@ Sample:
   * records where CISA added its own CVSS vector are excluded.
 Comparison: among records where the CNA and NVD vectors imply different SSVC values (crossing lines as in
 rq3_stale_copies.py), agreement of SSVC with the CNA-implied value minus agreement with the NVD-implied value; 95% percentile
-bootstrap interval. Technical Impact and Automatable are reported separately,
+bootstrap interval that resamples CNAs (record-level within a single CNA). The agreement is also reported for each
+direction of the disagreement. Technical Impact and Automatable are reported separately,
 overall and for the largest CNAs. Sensitivity: VulnCheck's published rules.
 Caveats reported with the results: the NVD's assessment date is unknown, the NVD may have consulted CISA's ADP data,
 and the NVD feeds (2026-10-26) are one month newer than the CVE List snapshot (2026-09-25).
@@ -48,6 +49,8 @@ def main():
     same_vec = [a.split("/", 1)[1] == b.split("/", 1)[1] for a, b in zip(base.cna_v3, base.nvd_v31)]
 
     out = {"sample": int(len(base)), "identical_vectors": int(sum(same_vec)),
+           "cisa_value_shares": {"technical_impact_partial": float((base.ssvc_technical_impact == "partial").mean()),
+                                 "automatable_no": float((base.ssvc_automatable == "no").mean())},
            "main": {"technical_impact": compare(base, "cna_ti", "nvd_ti", "ssvc_technical_impact", "total"),
                     "automatable": compare(base, "cna_au", "nvd_au", "ssvc_automatable", "yes")},
            "sensitivity_vulncheck": {"technical_impact": compare(base, "cna_ti_vc", "nvd_ti_vc", "ssvc_technical_impact", "total"),
@@ -61,7 +64,7 @@ def main():
                              ("automatable", "cna_au", "nvd_au", "ssvc_automatable")):
         dis = base[base[a] != base[b]]
         for cna_name in dis.cna.value_counts().head(8).index:
-            r = compare(dis[dis.cna == cna_name], a, b, y, None)
+            r = compare(dis[dis.cna == cna_name], a, b, y, None, cluster=None)
             out["by_cna"].setdefault(outcome, {})[cna_name] = {k: r[k] for k in ("n", "agree_seen", "agree_snapshot", "diff", "ci95")}
     # in the comparison helper, "seen" = CNA-implied value and "snapshot" = NVD-implied value
     out["note"] = "agree_seen = agreement with the CNA-implied value; agree_snapshot = agreement with the NVD-implied value"

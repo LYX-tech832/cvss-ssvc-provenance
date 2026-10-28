@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "CNA-provided CVSS assessments behind SSVC decisions and severity benchmarks: replication package"
+version: "1.0"
+doi: 10.5281/zenodo.23718895
+url: "https://github.com/LYX-tech832/cvss-ssvc-provenance"
+license: MIT
+type: dataset
+authors:
+  - family-names: Liu
+    given-names: Yuxin
+    orcid: "https://orcid.org/0009-0001-4637-4572"
+    affiliation: "School of Computer Science, Jilin Normal University"
+  - family-names: Wang
+    given-names: Jikui
+    orcid: "https://orcid.org/0009-0007-0440-8918"
+    affiliation: "School of Computer Science, Jilin Normal University"
+  - family-names: Ye
+    given-names: Yuxuan
+    orcid: "https://orcid.org/0009-0007-3997-985X"
+    affiliation: "School of Computer Science, Jilin Normal University"
+keywords:
+  - CVSS
+  - SSVC
+  - CVE
+  - vulnerability management
+  - data provenance
