@@ -6,10 +6,9 @@ temporal split, with a paired bootstrap over test CVEs (1,000 resamples, seed 20
 mean over five seeds of each configuration; each resample uses the same CVEs for all seeds.
 Models
   TF-IDF + LR      results/rq2/predictions/temporal_tfidf_lr.parquet (written by rq2_benchmark.py)
-  DeBERTa-v3-base  fine-tuned for 25 epochs with class weights, 5 seeds   } predictions from the replication package
-  SecureBERT       fine-tuned for 5 epochs with class weights, 5 seeds    } doi:10.5281/zenodo.23276178, copied
-                                                                            to data/encoder_predictions/<run>/pred_latent.parquet;
-                                                                            configurations selected on validation data there
+  DeBERTa-v3-base  fine-tuned for 25 epochs with class weights, 5 seeds   } fine-tuned by encoders/train_encoder.py
+  SecureBERT       fine-tuned for 5 epochs with class weights, 5 seeds    } (encoders/run_encoders.sh); test predictions
+                                                                            in data/encoder_predictions/<run>/pred_latent.parquet
 Inputs: data/processed/cve_records.parquet, results/rq1/source_types.json, the predictions above
 Output: results/rq2/reversal.json
 """

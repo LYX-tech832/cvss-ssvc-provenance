@@ -1,0 +1,6 @@
+# Additional packages for encoders/train_encoder.py on a GPU machine (install torch for the machine's CUDA version first)
+torch
+transformers>=4.44
+tokenizers
+sentencepiece
+protobuf

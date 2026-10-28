@@ -2,7 +2,7 @@
 
 ## CVE List
 
-The tables written by `src/extract_cve_records.py` and `src/extract_snapshot.py` (included in the Zenodo archive, doi:10.5281/zenodo.23718895), and the CVE identifiers in the result files, are derived from the CVE List (release `2026-09-25_all_CVEs_at_midnight` of <https://github.com/CVEProject/cvelistV5>).
+The tables written by `src/extract_cve_records.py` and `src/extract_snapshot.py` (included in the Zenodo archive, doi:10.5281/zenodo.23718895), and the CVE identifiers in the result files and in `data/encoder_predictions/`, are derived from the CVE List (release `2026-09-25_all_CVEs_at_midnight` of <https://github.com/CVEProject/cvelistV5>).
 
 Copyright © 1999-2026, The MITRE Corporation.
 
@@ -17,7 +17,3 @@ CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive, no-cha
 ## CISA Vulnrichment
 
 `data/asof_versions.jsonl` and `data/vulnrichment_commits.tsv` are derived from the public history of <https://github.com/cisagov/vulnrichment>, which is dedicated to the public domain under CC0 1.0 Universal.
-
-## Encoder predictions
-
-`data/encoder_predictions/` is taken from the replication package doi:10.5281/zenodo.23276178 (MIT License).

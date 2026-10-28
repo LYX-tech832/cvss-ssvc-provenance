@@ -19,18 +19,19 @@ The script and result folder names follow the order in which the analyses were w
 | RQ1 (Section 5, Table S1, Table S2) | `rq3_stale_copies.py`, `rq3_disagreement.py`, `rq3_stale_decisions.py`, `rq3_selection.py` (uses `covariates.py`) | `results/rq3/stale_copies.json`, `disagreement.json`, `stale_decisions.json`, `selection.json` |
 | RQ2 (Section 6, Fig. 2, Table S3, Table S4) | `rq3_tiers.py`, `rq1_nvd_agreement.py` | `results/rq3/tiers.json`, `results/rq1/nvd_agreement.json` |
 | RQ1 and RQ2 by time of the NVD's assessment (Sections 5 and 6, Tables S11 and S12) | `fetch_nvd_history.py`, `rq3_nvd_timing.py` | `results/rq3/nvd_timing.json` |
-| RQ3 (Section 7, Fig. 3, Fig. S1, Tables S5 to S10) | `rq1_provenance.py`, `rq2_benchmark.py`, `rq2_reversal.py`, `rq2_robustness.py`, `rq2_pairing.py` | `results/rq1/provenance.json`, `source_types.json`, `results/rq2/` |
+| RQ3 (Section 7, Fig. 3, Fig. S1, Tables S5 to S10) | `rq1_provenance.py`, `rq2_benchmark.py`, `rq2_reversal.py`, `rq2_robustness.py`, `rq2_pairing.py`; encoder fine-tuning: `encoders/train_encoder.py` | `results/rq1/provenance.json`, `source_types.json`, `results/rq2/`; encoder predictions: `data/encoder_predictions/` |
 
 ## Contents
 
 | Path | What it is |
 |---|---|
-| `src/` | All scripts (Python 3.14). The description at the top of each script states its inputs, method and outputs. |
+| `src/` | All analysis scripts (Python 3.14). The description at the top of each script states its inputs, method and outputs. |
+| `encoders/` | Fine-tuning of the two encoders (DeBERTa-v3-base, SecureBERT) on the temporal split of RQ3: `train_encoder.py` (one run; its description states the data, model and training settings), `common.py` (data loading and evaluation), `run_encoders.sh` (the ten runs of the paper) and `requirements-gpu.txt` (additional packages). A GPU is needed for the runs; with the same packages, `python encoders/train_encoder.py --smoke_test` checks the pipeline on the CPU with a small model. |
 | `data/asof_versions.jsonl` | For 49,380 CVEs, the Vulnrichment copy of the record that carries CISA's SSVC decision, retrieved from the repository history (written by `src/fetch_asof_versions.py`). |
 | `data/vulnrichment_commits.tsv` | All commits of the Vulnrichment repository with their dates (written by `src/vulnrichment_commits.py`). |
 | `data/nvd_records.parquet` | The NVD's own (Primary) CVSS vectors extracted from the NVD JSON 2.0 feeds downloaded on 26 October 2026 (written by `src/extract_nvd.py`). The feeds change over time, so this table is provided. |
 | `data/nvd_cvss_history.parquet` | The NVD's CVSS v3.1 assessment events (Initial Analysis, Reanalysis, Modified Analysis) from 1 June 2022 to 26 October 2026, with their times, from the NVD CVE Change History API (written by `src/fetch_nvd_history.py`). |
-| `data/encoder_predictions/` | Test-set predictions of two fine-tuned encoders (DeBERTa-v3-base, SecureBERT; five seeds each), taken from the replication package doi:10.5281/zenodo.23276178. |
+| `data/encoder_predictions/` | Test-set predictions of the two fine-tuned encoders (DeBERTa-v3-base, SecureBERT; five seeds each; the ten runs of `encoders/run_encoders.sh`), read by `src/rq2_reversal.py`. |
 | `data/*.meta.json`, `data/processed/*.json` | Input hashes and row counts of the extracted tables. |
 | `results/rq1/`, `results/rq2/`, `results/rq3/` | All results, as JSON and Markdown. |
 
@@ -53,6 +54,7 @@ Install the dependencies with `pip install -r requirements.txt`, then run from t
 | 3 (optional) | `python src/fetch_nvd_feeds.py` and `python src/extract_nvd.py` | `data/nvd_records.parquet` (newer NVD data than the study's) | 10 min |
 | 4 (optional) | `python src/vulnrichment_commits.py` and `python src/fetch_asof_versions.py --n 49380` | `data/vulnrichment_commits.tsv`, `data/asof_versions.jsonl` | about two days (network) |
 | 5 | `python src/rq1_provenance.py` and `python src/rq1_nvd_agreement.py` | `results/rq1/` | 2 min |
+| 5b (optional) | `pip install -r encoders/requirements-gpu.txt`, then `bash encoders/run_encoders.sh` (GPU) | `results/encoder/` | about 3 h on one RTX 4090 |
 | 6 | `python src/rq2_benchmark.py`, `python src/rq2_pairing.py`, `python src/rq2_reversal.py`, `python src/rq2_robustness.py` | `results/rq2/` | 15 min |
 | 7 | `python src/rq3_stale_copies.py`, `python src/rq3_disagreement.py`, `python src/rq3_tiers.py`, `python src/rq3_stale_decisions.py`, `python src/rq3_selection.py` | `results/rq3/` | 10 min |
 | 7b (optional) | `python src/fetch_nvd_history.py` | `data/nvd_cvss_history.parquet` | about 1 h (network) |
@@ -60,7 +62,7 @@ Install the dependencies with `pip install -r requirements.txt`, then run from t
 | 8 | `python src/figures.py` | `paper/figures/` | 1 min |
 | 9 | `python src/supplementary_tables.py` | `paper/supplementary_tables.tex` (Tables S1 to S12) | seconds |
 
-Steps 3, 4 and 7b are optional: the provided `data/nvd_records.parquet`, `data/asof_versions.jsonl` and `data/nvd_cvss_history.parquet` are the data of the study. `src/rq2_robustness.py` reuses the cached predictions in `results/rq2/tfidf_sensitivity/` and then takes seconds; delete that folder to refit the 18 TF-IDF models (about one hour). Bootstrap intervals use fixed seeds and are reproduced exactly.
+Steps 3, 4, 5b and 7b are optional: the provided `data/nvd_records.parquet`, `data/asof_versions.jsonl`, `data/encoder_predictions/` and `data/nvd_cvss_history.parquet` are the data of the study. GPU training is not bit-for-bit deterministic, so the predictions of step 5b (in `results/encoder/`) can differ slightly from the provided ones; `src/rq2_reversal.py` uses them only after they are copied to `data/encoder_predictions/`. `src/rq2_robustness.py` reuses the cached predictions in `results/rq2/tfidf_sensitivity/` and then takes seconds; delete that folder to refit the 18 TF-IDF models (about one hour). Bootstrap intervals use fixed seeds and are reproduced exactly.
 
 ## Notes
 
