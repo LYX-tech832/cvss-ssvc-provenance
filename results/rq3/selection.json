@@ -1,0 +1,142 @@
+{
+ "all SSVC records": {
+  "n": 190993,
+  "cna_top10": {
+   "mitre": 0.119,
+   "GitHub_M": 0.0964,
+   "Patchstack": 0.0922,
+   "VulDB": 0.081,
+   "Wordfence": 0.0583,
+   "oracle": 0.0445,
+   "VulnCheck": 0.0392,
+   "microsoft": 0.0377,
+   "Linux": 0.0296,
+   "WPScan": 0.02
+  },
+  "ssvc_year": {
+   "2025": 0.3498,
+   "2026": 0.3392,
+   "2024": 0.3082,
+   "2023": 0.0023,
+   "2022": 0.0004,
+   "2021": 0.0002,
+   "2020": 0.0
+  },
+  "vulnerability_type_top10": {
+   "other CWE": 0.2865,
+   "CWE-79": 0.1333,
+   "unknown": 0.1005,
+   "CWE-89": 0.061,
+   "CWE-862": 0.0433,
+   "CWE-284": 0.0336,
+   "CWE-352": 0.0276,
+   "CWE-22": 0.0267,
+   "CWE-787": 0.0238,
+   "CWE-20": 0.0226
+  },
+  "product_type": {
+   "unknown": 0.6473,
+   "WordPress plugin": 0.1566,
+   "application": 0.0988,
+   "operating system": 0.0585,
+   "open-source package": 0.0376,
+   "hardware / firmware": 0.0012
+  }
+ },
+ "stale copies": {
+  "n": 1088,
+  "cna_top10": {
+   "VulnCheck": 0.1893,
+   "Patchstack": 0.1535,
+   "VulDB": 0.1232,
+   "Wordfence": 0.0846,
+   "redhat": 0.0763,
+   "adobe": 0.0496,
+   "GitHub_M": 0.0312,
+   "fortinet": 0.0267,
+   "microsoft": 0.0193,
+   "siemens": 0.0184
+  },
+  "ssvc_year": {
+   "2025": 0.3888,
+   "2024": 0.3346,
+   "2026": 0.2757,
+   "2023": 0.0009
+  },
+  "vulnerability_type_top10": {
+   "other CWE": 0.3171,
+   "CWE-79": 0.1811,
+   "CWE-862": 0.0689,
+   "CWE-89": 0.068,
+   "CWE-352": 0.0616,
+   "CWE-22": 0.034,
+   "CWE-78": 0.0257,
+   "CWE-74": 0.023,
+   "CWE-121": 0.0175,
+   "CWE-863": 0.0175
+  },
+  "product_type": {
+   "unknown": 0.4274,
+   "WordPress plugin": 0.2188,
+   "application": 0.2096,
+   "open-source package": 0.1002,
+   "operating system": 0.0368,
+   "hardware / firmware": 0.0074
+  }
+ },
+ "stale copies, description unchanged": {
+  "n": 681,
+  "cna_top10": {
+   "VulnCheck": 0.2702,
+   "Patchstack": 0.1733,
+   "redhat": 0.1101,
+   "Wordfence": 0.1057,
+   "GitHub_M": 0.0382,
+   "VulDB": 0.0367,
+   "adobe": 0.0367,
+   "Fluid Attacks": 0.0279,
+   "qnap": 0.022,
+   "ibm": 0.0176
+  },
+  "ssvc_year": {
+   "2025": 0.3539,
+   "2024": 0.3524,
+   "2026": 0.2922,
+   "2023": 0.0015
+  },
+  "vulnerability_type_top10": {
+   "other CWE": 0.3025,
+   "CWE-79": 0.1953,
+   "CWE-352": 0.0881,
+   "CWE-862": 0.0808,
+   "CWE-89": 0.0617,
+   "CWE-22": 0.0294,
+   "CWE-78": 0.025,
+   "CWE-863": 0.0235,
+   "CWE-918": 0.0191,
+   "CWE-125": 0.0176
+  },
+  "product_type": {
+   "unknown": 0.3671,
+   "WordPress plugin": 0.254,
+   "application": 0.2305,
+   "open-source package": 0.1204,
+   "operating system": 0.0206,
+   "hardware / firmware": 0.0073
+  }
+ },
+ "crossing_line_agreement": {
+  "n": 140176,
+  "technical_impact": 0.9168545257390709,
+  "automatable": 0.9228969295742495
+ },
+ "cna_vector_share_of_ssvc_records_by_publication_year": {
+  "2024": 0.7015496075669149,
+  "2025": 0.8028486782133091,
+  "2026": 0.8304428248462523
+ },
+ "technical_impact_partial_share": {
+  "VulDB": 0.8524961200206932,
+  "other CNAs": 0.6501459362370903
+ }
+}

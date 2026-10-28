@@ -1,0 +1,299 @@
+{
+ "fetch_status": {
+  "ok": 46858,
+  "superseded": 1965,
+  "ts_mismatch": 320,
+  "absent_at_head": 237
+ },
+ "ok": 46858,
+ "seen_valid": 43483,
+ "used_after_version_check": 43400,
+ "cisa_own_group": 4615,
+ "stale_copy_group": 1088,
+ "stale_copy_desc_unchanged": 681,
+ "main_desc_unchanged": {
+  "technical_impact": {
+   "n": 94,
+   "agree_seen": 0.7021276595744681,
+   "agree_snapshot": 0.2978723404255319,
+   "diff": 0.4042553191489362,
+   "ci95": [
+    0.21276595744680854,
+    0.574468085106383
+   ]
+  },
+  "automatable": {
+   "n": 146,
+   "agree_seen": 0.773972602739726,
+   "agree_snapshot": 0.22602739726027396,
+   "diff": 0.547945205479452,
+   "ci95": [
+    0.4109589041095891,
+    0.6849315068493151
+   ]
+  }
+ },
+ "all_stale": {
+  "technical_impact": {
+   "n": 147,
+   "agree_seen": 0.7278911564625851,
+   "agree_snapshot": 0.272108843537415,
+   "diff": 0.4557823129251701,
+   "ci95": [
+    0.3061224489795918,
+    0.5918367346938775
+   ]
+  },
+  "automatable": {
+   "n": 213,
+   "agree_seen": 0.8028169014084507,
+   "agree_snapshot": 0.19718309859154928,
+   "diff": 0.6056338028169015,
+   "ci95": [
+    0.49295774647887325,
+    0.7089201877934272
+   ]
+  }
+ },
+ "sensitivity_map_desc_unchanged": {
+  "technical_impact": {
+   "n": 89,
+   "agree_seen": 0.7078651685393258,
+   "agree_snapshot": 0.29213483146067415,
+   "diff": 0.41573033707865165,
+   "ci95": [
+    0.23595505617977525,
+    0.595505617977528
+   ]
+  },
+  "automatable": {
+   "n": 140,
+   "agree_seen": 0.7857142857142857,
+   "agree_snapshot": 0.21428571428571427,
+   "diff": 0.5714285714285714,
+   "ci95": [
+    0.4285714285714286,
+    0.7
+   ]
+  }
+ },
+ "sensitivity_map_all": {
+  "technical_impact": {
+   "n": 125,
+   "agree_seen": 0.76,
+   "agree_snapshot": 0.24,
+   "diff": 0.52,
+   "ci95": [
+    0.36000000000000004,
+    0.6639999999999999
+   ]
+  },
+  "automatable": {
+   "n": 186,
+   "agree_seen": 0.8118279569892473,
+   "agree_snapshot": 0.1881720430107527,
+   "diff": 0.6236559139784945,
+   "ci95": [
+    0.5053763440860215,
+    0.7311827956989247
+   ]
+  }
+ },
+ "sensitivity_vulncheck_desc_unchanged": {
+  "technical_impact": {
+   "n": 99,
+   "agree_seen": 0.7070707070707071,
+   "agree_snapshot": 0.29292929292929293,
+   "diff": 0.41414141414141414,
+   "ci95": [
+    0.23232323232323232,
+    0.595959595959596
+   ]
+  },
+  "automatable": {
+   "n": 141,
+   "agree_seen": 0.7872340425531915,
+   "agree_snapshot": 0.2127659574468085,
+   "diff": 0.574468085106383,
+   "ci95": [
+    0.4326241134751773,
+    0.7021276595744681
+   ]
+  }
+ },
+ "sensitivity_vulncheck_all": {
+  "technical_impact": {
+   "n": 148,
+   "agree_seen": 0.7702702702702703,
+   "agree_snapshot": 0.22972972972972974,
+   "diff": 0.5405405405405406,
+   "ci95": [
+    0.40540540540540543,
+    0.6756756756756757
+   ]
+  },
+  "automatable": {
+   "n": 192,
+   "agree_seen": 0.8072916666666666,
+   "agree_snapshot": 0.19270833333333334,
+   "diff": 0.6145833333333333,
+   "ci95": [
+    0.5,
+    0.71875
+   ]
+  }
+ },
+ "timing_le_2h_n": 883,
+ "sensitivity_commit_le_2h_desc_unchanged": {
+  "technical_impact": {
+   "n": 76,
+   "agree_seen": 0.7236842105263158,
+   "agree_snapshot": 0.27631578947368424,
+   "diff": 0.4473684210526316,
+   "ci95": [
+    0.2368421052631579,
+    0.631578947368421
+   ]
+  },
+  "automatable": {
+   "n": 108,
+   "agree_seen": 0.8425925925925926,
+   "agree_snapshot": 0.1574074074074074,
+   "diff": 0.6851851851851851,
+   "ci95": [
+    0.537037037037037,
+    0.8148148148148149
+   ]
+  }
+ },
+ "sensitivity_commit_le_2h_all": {
+  "technical_impact": {
+   "n": 121,
+   "agree_seen": 0.7603305785123967,
+   "agree_snapshot": 0.2396694214876033,
+   "diff": 0.5206611570247934,
+   "ci95": [
+    0.37190082644628103,
+    0.6694214876033058
+   ]
+  },
+  "automatable": {
+   "n": 170,
+   "agree_seen": 0.8470588235294118,
+   "agree_snapshot": 0.15294117647058825,
+   "diff": 0.6941176470588235,
+   "ci95": [
+    0.5764705882352941,
+    0.8
+   ]
+  }
+ },
+ "stale_copy_without_vuldb": 954,
+ "main_desc_unchanged_without_vuldb": {
+  "technical_impact": {
+   "n": 94,
+   "agree_seen": 0.7021276595744681,
+   "agree_snapshot": 0.2978723404255319,
+   "diff": 0.4042553191489362,
+   "ci95": [
+    0.21276595744680854,
+    0.574468085106383
+   ]
+  },
+  "automatable": {
+   "n": 144,
+   "agree_seen": 0.7708333333333334,
+   "agree_snapshot": 0.22916666666666666,
+   "diff": 0.5416666666666667,
+   "ci95": [
+    0.40277777777777773,
+    0.6805555555555556
+   ]
+  }
+ },
+ "all_stale_without_vuldb": {
+  "technical_impact": {
+   "n": 146,
+   "agree_seen": 0.726027397260274,
+   "agree_snapshot": 0.273972602739726,
+   "diff": 0.452054794520548,
+   "ci95": [
+    0.30136986301369867,
+    0.5890410958904109
+   ]
+  },
+  "automatable": {
+   "n": 210,
+   "agree_seen": 0.8,
+   "agree_snapshot": 0.2,
+   "diff": 0.6000000000000001,
+   "ci95": [
+    0.48571428571428577,
+    0.7047619047619047
+   ]
+  }
+ },
+ "cisa_own_side_evidence": {
+  "technical_impact": {
+   "n": 335,
+   "agree_seen": 0.8328358208955224,
+   "agree_snapshot": 0.16716417910447762,
+   "diff": 0.6656716417910449,
+   "ci95": [
+    0.5820895522388059,
+    0.7432835820895523
+   ]
+  },
+  "automatable": {
+   "n": 291,
+   "agree_seen": 0.8247422680412371,
+   "agree_snapshot": 0.17525773195876287,
+   "diff": 0.6494845360824741,
+   "ci95": [
+    0.5601374570446735,
+    0.738831615120275
+   ]
+  }
+ },
+ "selection": {
+  "stale_top_cnas": {
+   "VulnCheck": 0.189,
+   "Patchstack": 0.153,
+   "VulDB": 0.123,
+   "Wordfence": 0.085,
+   "redhat": 0.076,
+   "adobe": 0.05,
+   "GitHub_M": 0.031,
+   "fortinet": 0.027,
+   "microsoft": 0.019,
+   "siemens": 0.018
+  },
+  "all_ssvc_top_cnas": {
+   "mitre": 0.119,
+   "GitHub_M": 0.096,
+   "Patchstack": 0.092,
+   "VulDB": 0.081,
+   "Wordfence": 0.058,
+   "oracle": 0.044,
+   "VulnCheck": 0.039,
+   "microsoft": 0.038,
+   "Linux": 0.03,
+   "WPScan": 0.02
+  },
+  "stale_ssvc_year": {
+   "2023": 0.001,
+   "2024": 0.335,
+   "2025": 0.389,
+   "2026": 0.276
+  },
+  "all_ssvc_year": {
+   "2020": 0.0,
+   "2021": 0.0,
+   "2022": 0.0,
+   "2023": 0.002,
+   "2024": 0.308,
+   "2025": 0.35,
+   "2026": 0.339
+  }
+ }
+}

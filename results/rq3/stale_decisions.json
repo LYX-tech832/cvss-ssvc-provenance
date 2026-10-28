@@ -1,0 +1,17 @@
+{
+ "stale_copies": 1088,
+ "crossing_a_line": 321,
+ "crossing_technical_impact": 147,
+ "crossing_automatable": 213,
+ "still_old_value_on_all_crossed_points": 241,
+ "still_old_share": 0.7507788161993769,
+ "days_since_cna_update": {
+  "median": 169.0,
+  "q25": 133.0,
+  "q75": 251.0,
+  "share_at_least_90": 0.7975077881619937
+ },
+ "days_since_cna_update_still_old": {
+  "median": 169.0
+ }
+}

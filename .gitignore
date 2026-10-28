@@ -1,0 +1,4 @@
+__pycache__/
+data/processed/*.parquet
+data/snapshot_records.parquet
+data/external/

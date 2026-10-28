@@ -1,0 +1,799 @@
+{
+ "sample": 36725,
+ "kev": 230,
+ "top_cnas": [
+  "VulDB",
+  "GitHub_M",
+  "cisco",
+  "ibm",
+  "zdi",
+  "icscert",
+  "talos",
+  "mitre",
+  "oracle",
+  "dell",
+  "@huntrdev",
+  "fortinet"
+ ],
+ "scenarios": {
+  "exposed": {
+   "all": {
+    "main_actual_vs_nvd": {
+     "n": 36725,
+     "changed": 0.367569775357386,
+     "changed_ci95": [
+      0.3245119460468665,
+      0.41324437698536987
+     ],
+     "faster": 0.30066712049012934,
+     "faster_ci95": [
+      0.2566203891479903,
+      0.34888662553155186
+     ],
+     "slower": 0.06690265486725663,
+     "slower_ci95": [
+      0.059505696351448804,
+      0.07537276716460249
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3297,
+      "14 days -> 3 days + forensic triage": 5,
+      "14 days -> 60 days": 1884,
+      "3 days -> 14 days": 454,
+      "3 days -> 3 days + forensic triage": 8,
+      "3 days -> 60 days": 92,
+      "3 days + forensic triage -> 14 days": 8,
+      "3 days + forensic triage -> 3 days": 19,
+      "60 days -> 14 days": 5956,
+      "60 days -> 3 days": 1776
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 36725,
+     "changed": 0.32846834581347856,
+     "changed_ci95": [
+      0.2816249349369702,
+      0.3800760178753356
+     ],
+     "faster": 0.2909189925119129,
+     "faster_ci95": [
+      0.24312945364562583,
+      0.344689743076609
+     ],
+     "slower": 0.03754935330156569,
+     "slower_ci95": [
+      0.03166082418188309,
+      0.044139088462683516
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3373,
+      "14 days -> 3 days + forensic triage": 13,
+      "14 days -> 60 days": 1045,
+      "3 days -> 14 days": 298,
+      "3 days -> 3 days + forensic triage": 18,
+      "3 days -> 60 days": 25,
+      "3 days + forensic triage -> 14 days": 5,
+      "3 days + forensic triage -> 3 days": 6,
+      "60 days -> 14 days": 5558,
+      "60 days -> 3 days": 1722
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 36725,
+     "changed": 0.3476650782845473,
+     "changed_ci95": [
+      0.30521272580466724,
+      0.39364489223413457
+     ],
+     "faster": 0.27561606535057864,
+     "faster_ci95": [
+      0.23058842547069888,
+      0.3252422273616037
+     ],
+     "slower": 0.07204901293396869,
+     "slower_ci95": [
+      0.06420638585152959,
+      0.08069965362858021
+     ],
+     "transitions": {
+      "14 days -> 3 days": 2774,
+      "14 days -> 3 days + forensic triage": 7,
+      "14 days -> 60 days": 1948,
+      "3 days -> 14 days": 566,
+      "3 days -> 3 days + forensic triage": 9,
+      "3 days -> 60 days": 109,
+      "3 days + forensic triage -> 14 days": 6,
+      "3 days + forensic triage -> 3 days": 17,
+      "60 days -> 14 days": 5708,
+      "60 days -> 3 days": 1624
+     }
+    }
+   },
+   "non-KEV": {
+    "main_actual_vs_nvd": {
+     "n": 36495,
+     "changed": 0.3687080421975613,
+     "changed_ci95": [
+      0.3256067786580735,
+      0.41430592915072867
+     ],
+     "faster": 0.3021235785724072,
+     "faster_ci95": [
+      0.2572747121364516,
+      0.35066602353685994
+     ],
+     "slower": 0.06658446362515413,
+     "slower_ci95": [
+      0.05951155322964289,
+      0.07522300511408726
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3294,
+      "14 days -> 60 days": 1884,
+      "3 days -> 14 days": 454,
+      "3 days -> 60 days": 92,
+      "60 days -> 14 days": 5956,
+      "60 days -> 3 days": 1776
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 36495,
+     "changed": 0.32927798328538155,
+     "changed_ci95": [
+      0.28238415144567225,
+      0.3812356806448523
+     ],
+     "faster": 0.2918481983833402,
+     "faster_ci95": [
+      0.24345951903140514,
+      0.34570767492311644
+     ],
+     "slower": 0.03742978490204137,
+     "slower_ci95": [
+      0.03166977197422274,
+      0.044203618446620484
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3371,
+      "14 days -> 60 days": 1045,
+      "3 days -> 14 days": 296,
+      "3 days -> 60 days": 25,
+      "60 days -> 14 days": 5558,
+      "60 days -> 3 days": 1722
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 36495,
+     "changed": 0.34867790108234004,
+     "changed_ci95": [
+      0.30590934476832793,
+      0.3945412876777652
+     ],
+     "faster": 0.2768324428003836,
+     "faster_ci95": [
+      0.23177029998453708,
+      0.3261389235331279
+     ],
+     "slower": 0.07184545828195643,
+     "slower_ci95": [
+      0.0642409761653631,
+      0.0806717147786619
+     ],
+     "transitions": {
+      "14 days -> 3 days": 2771,
+      "14 days -> 60 days": 1948,
+      "3 days -> 14 days": 565,
+      "3 days -> 60 days": 109,
+      "60 days -> 14 days": 5708,
+      "60 days -> 3 days": 1624
+     }
+    }
+   },
+   "KEV": {
+    "main_actual_vs_nvd": {
+     "n": 230,
+     "changed": 0.18695652173913044,
+     "changed_ci95": [
+      0.12083333333333333,
+      0.2692357512953367
+     ],
+     "faster": 0.06956521739130435,
+     "faster_ci95": [
+      0.038461538461538464,
+      0.1125
+     ],
+     "slower": 0.11739130434782609,
+     "slower_ci95": [
+      0.06395282467877243,
+      0.1835753509963768
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3,
+      "14 days -> 3 days + forensic triage": 5,
+      "3 days -> 3 days + forensic triage": 8,
+      "3 days + forensic triage -> 14 days": 8,
+      "3 days + forensic triage -> 3 days": 19
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 230,
+     "changed": 0.2,
+     "changed_ci95": [
+      0.14080433835428854,
+      0.2722772277227723
+     ],
+     "faster": 0.14347826086956522,
+     "faster_ci95": [
+      0.09909803671596125,
+      0.20320855614973263
+     ],
+     "slower": 0.05652173913043478,
+     "slower_ci95": [
+      0.02734321635928962,
+      0.09210677904438513
+     ],
+     "transitions": {
+      "14 days -> 3 days": 2,
+      "14 days -> 3 days + forensic triage": 13,
+      "3 days -> 14 days": 2,
+      "3 days -> 3 days + forensic triage": 18,
+      "3 days + forensic triage -> 14 days": 5,
+      "3 days + forensic triage -> 3 days": 6
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 230,
+     "changed": 0.18695652173913044,
+     "changed_ci95": [
+      0.1273688100517369,
+      0.262015892333023
+     ],
+     "faster": 0.08260869565217391,
+     "faster_ci95": [
+      0.05164179521573888,
+      0.12340556868925662
+     ],
+     "slower": 0.10434782608695652,
+     "slower_ci95": [
+      0.05577591274247273,
+      0.16536157673542332
+     ],
+     "transitions": {
+      "14 days -> 3 days": 3,
+      "14 days -> 3 days + forensic triage": 7,
+      "3 days -> 14 days": 1,
+      "3 days -> 3 days + forensic triage": 9,
+      "3 days + forensic triage -> 14 days": 6,
+      "3 days + forensic triage -> 3 days": 17
+     }
+    }
+   },
+   "all without VulDB": {
+    "main_actual_vs_nvd": {
+     "n": 28290,
+     "changed": 0.284588193708024,
+     "changed_ci95": [
+      0.25980633312751,
+      0.30974024228993524
+     ],
+     "faster": 0.20328738069989397,
+     "faster_ci95": [
+      0.1832737018746183,
+      0.22481100595733663
+     ],
+     "slower": 0.08130081300813008,
+     "slower_ci95": [
+      0.07256211611025348,
+      0.09136367644188827
+     ],
+     "transitions": {
+      "14 days -> 3 days": 1351,
+      "14 days -> 3 days + forensic triage": 5,
+      "14 days -> 60 days": 1801,
+      "3 days -> 14 days": 394,
+      "3 days -> 3 days + forensic triage": 8,
+      "3 days -> 60 days": 78,
+      "3 days + forensic triage -> 14 days": 8,
+      "3 days + forensic triage -> 3 days": 19,
+      "60 days -> 14 days": 3932,
+      "60 days -> 3 days": 455
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 28290,
+     "changed": 0.22852598091198303,
+     "changed_ci95": [
+      0.20887830749996983,
+      0.2487855732549653
+     ],
+     "faster": 0.1816542948038176,
+     "faster_ci95": [
+      0.16550084035995058,
+      0.19841013198974133
+     ],
+     "slower": 0.04687168610816543,
+     "slower_ci95": [
+      0.039614387832666735,
+      0.05519090995850472
+     ],
+     "transitions": {
+      "14 days -> 3 days": 1223,
+      "14 days -> 3 days + forensic triage": 13,
+      "14 days -> 60 days": 997,
+      "3 days -> 14 days": 293,
+      "3 days -> 3 days + forensic triage": 15,
+      "3 days -> 60 days": 25,
+      "3 days + forensic triage -> 14 days": 5,
+      "3 days + forensic triage -> 3 days": 6,
+      "60 days -> 14 days": 3492,
+      "60 days -> 3 days": 396
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 28290,
+     "changed": 0.268328031106398,
+     "changed_ci95": [
+      0.24488928857631026,
+      0.2919590784311422
+     ],
+     "faster": 0.18130081300813009,
+     "faster_ci95": [
+      0.16227821222057626,
+      0.2016129204109753
+     ],
+     "slower": 0.08702721809826794,
+     "slower_ci95": [
+      0.07812044569426066,
+      0.09738838270611386
+     ],
+     "transitions": {
+      "14 days -> 3 days": 1074,
+      "14 days -> 3 days + forensic triage": 7,
+      "14 days -> 60 days": 1845,
+      "3 days -> 14 days": 501,
+      "3 days -> 3 days + forensic triage": 9,
+      "3 days -> 60 days": 93,
+      "3 days + forensic triage -> 14 days": 6,
+      "3 days + forensic triage -> 3 days": 17,
+      "60 days -> 14 days": 3637,
+      "60 days -> 3 days": 402
+     }
+    }
+   },
+   "by_cna_main": {
+    "VulDB": {
+     "n": 8435,
+     "changed": 0.6458802608180202,
+     "faster": 0.627267338470658,
+     "slower": 0.01861292234736218
+    },
+    "GitHub_M": {
+     "n": 5959,
+     "changed": 0.3300889410974996,
+     "faster": 0.23175029367343514,
+     "slower": 0.09833864742406444
+    },
+    "cisco": {
+     "n": 2208,
+     "changed": 0.1621376811594203,
+     "faster": 0.11548913043478261,
+     "slower": 0.04664855072463768
+    },
+    "ibm": {
+     "n": 1325,
+     "changed": 0.3516981132075472,
+     "faster": 0.30566037735849055,
+     "slower": 0.046037735849056606
+    },
+    "zdi": {
+     "n": 1164,
+     "changed": 0.08676975945017182,
+     "faster": 0.04725085910652921,
+     "slower": 0.03951890034364261
+    },
+    "icscert": {
+     "n": 960,
+     "changed": 0.30625,
+     "faster": 0.22708333333333333,
+     "slower": 0.07916666666666666
+    },
+    "talos": {
+     "n": 935,
+     "changed": 0.44278074866310163,
+     "faster": 0.2663101604278075,
+     "slower": 0.17647058823529413
+    },
+    "mitre": {
+     "n": 761,
+     "changed": 0.4480946123521682,
+     "faster": 0.3718791064388962,
+     "slower": 0.07621550591327202
+    },
+    "oracle": {
+     "n": 761,
+     "changed": 0.07621550591327202,
+     "faster": 0.04336399474375821,
+     "slower": 0.0328515111695138
+    },
+    "dell": {
+     "n": 722,
+     "changed": 0.24930747922437674,
+     "faster": 0.18282548476454294,
+     "slower": 0.0664819944598338
+    },
+    "@huntrdev": {
+     "n": 694,
+     "changed": 0.36743515850144093,
+     "faster": 0.19596541786743515,
+     "slower": 0.17146974063400577
+    },
+    "fortinet": {
+     "n": 590,
+     "changed": 0.2830508474576271,
+     "faster": 0.20508474576271185,
+     "slower": 0.07796610169491526
+    }
+   }
+  },
+  "not exposed": {
+   "all": {
+    "main_actual_vs_nvd": {
+     "n": 36725,
+     "changed": 0.19006126616746086,
+     "changed_ci95": [
+      0.16822675421883387,
+      0.211399307342426
+     ],
+     "faster": 0.1665078284547311,
+     "faster_ci95": [
+      0.14603092066856335,
+      0.18719247464744707
+     ],
+     "slower": 0.023553437712729747,
+     "slower_ci95": [
+      0.019461124219513577,
+      0.028356184444486367
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 27,
+      "3 days + forensic triage -> 14 days": 27,
+      "60 days -> next upgrade": 838,
+      "next upgrade -> 60 days": 6088
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 36725,
+     "changed": 0.13881552076242343,
+     "changed_ci95": [
+      0.1193847744099863,
+      0.1587727944573017
+     ],
+     "faster": 0.1172498298162015,
+     "faster_ci95": [
+      0.09854795891328953,
+      0.13753422766632606
+     ],
+     "slower": 0.02156569094622192,
+     "slower_ci95": [
+      0.017270551412925304,
+      0.026630593566212103
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 25,
+      "3 days + forensic triage -> 14 days": 11,
+      "60 days -> next upgrade": 781,
+      "next upgrade -> 60 days": 4281
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 36725,
+     "changed": 0.17366916269571137,
+     "changed_ci95": [
+      0.1554012751770787,
+      0.19252171890601782
+     ],
+     "faster": 0.12909462219196732,
+     "faster_ci95": [
+      0.11017019838864478,
+      0.1481302396697482
+     ],
+     "slower": 0.04457454050374404,
+     "slower_ci95": [
+      0.03779431582459012,
+      0.0522565633746955
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 23,
+      "3 days + forensic triage -> 14 days": 31,
+      "60 days -> next upgrade": 1606,
+      "next upgrade -> 60 days": 4718
+     }
+    }
+   },
+   "non-KEV": {
+    "main_actual_vs_nvd": {
+     "n": 36495,
+     "changed": 0.18977942183860802,
+     "changed_ci95": [
+      0.16801533472446822,
+      0.212108011292336
+     ],
+     "faster": 0.166817372242773,
+     "faster_ci95": [
+      0.14654712684751658,
+      0.18823008621630077
+     ],
+     "slower": 0.022962049595835046,
+     "slower_ci95": [
+      0.018916436308674355,
+      0.02780498520648184
+     ],
+     "transitions": {
+      "60 days -> next upgrade": 838,
+      "next upgrade -> 60 days": 6088
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 36495,
+     "changed": 0.13870393204548567,
+     "changed_ci95": [
+      0.1192386796331427,
+      0.15905418421475934
+     ],
+     "faster": 0.11730374023838883,
+     "faster_ci95": [
+      0.0986127623394448,
+      0.13745691698816775
+     ],
+     "slower": 0.021400191807096864,
+     "slower_ci95": [
+      0.01717406095598642,
+      0.02643020152657267
+     ],
+     "transitions": {
+      "60 days -> next upgrade": 781,
+      "next upgrade -> 60 days": 4281
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 36495,
+     "changed": 0.17328401150842582,
+     "changed_ci95": [
+      0.15498165417301563,
+      0.19254025593882335
+     ],
+     "faster": 0.12927798328538156,
+     "faster_ci95": [
+      0.11085097737399109,
+      0.1485640768903104
+     ],
+     "slower": 0.04400602822304425,
+     "slower_ci95": [
+      0.037486139370328034,
+      0.05145735436955672
+     ],
+     "transitions": {
+      "60 days -> next upgrade": 1606,
+      "next upgrade -> 60 days": 4718
+     }
+    }
+   },
+   "KEV": {
+    "main_actual_vs_nvd": {
+     "n": 230,
+     "changed": 0.23478260869565218,
+     "changed_ci95": [
+      0.17272381172127366,
+      0.3116883116883117
+     ],
+     "faster": 0.11739130434782609,
+     "faster_ci95": [
+      0.07746365288505225,
+      0.16751335477183937
+     ],
+     "slower": 0.11739130434782609,
+     "slower_ci95": [
+      0.059907834101382486,
+      0.1898180477963997
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 27,
+      "3 days + forensic triage -> 14 days": 27
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 230,
+     "changed": 0.1565217391304348,
+     "changed_ci95": [
+      0.11637931034482758,
+      0.20212911289384952
+     ],
+     "faster": 0.10869565217391304,
+     "faster_ci95": [
+      0.06640625,
+      0.16204016516516512
+     ],
+     "slower": 0.04782608695652174,
+     "slower_ci95": [
+      0.01646090534979424,
+      0.0787037037037037
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 25,
+      "3 days + forensic triage -> 14 days": 11
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 230,
+     "changed": 0.23478260869565218,
+     "changed_ci95": [
+      0.17670682730923695,
+      0.2964856059960821
+     ],
+     "faster": 0.1,
+     "faster_ci95": [
+      0.0643561038409471,
+      0.14354066985645933
+     ],
+     "slower": 0.13478260869565217,
+     "slower_ci95": [
+      0.07428500707213578,
+      0.19512403942532575
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 23,
+      "3 days + forensic triage -> 14 days": 31
+     }
+    }
+   },
+   "all without VulDB": {
+    "main_actual_vs_nvd": {
+     "n": 28290,
+     "changed": 0.17193354542241074,
+     "changed_ci95": [
+      0.14883771181265748,
+      0.19659621896046514
+     ],
+     "faster": 0.14715447154471545,
+     "faster_ci95": [
+      0.12605726234738676,
+      0.17055292434606178
+     ],
+     "slower": 0.024779073877695297,
+     "slower_ci95": [
+      0.019648577466251916,
+      0.030872416498781998
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 26,
+      "3 days + forensic triage -> 14 days": 27,
+      "60 days -> next upgrade": 674,
+      "next upgrade -> 60 days": 4137
+     }
+    },
+    "decomposition_cna_vs_nvd": {
+     "n": 28290,
+     "changed": 0.1129374337221633,
+     "changed_ci95": [
+      0.09569408813958316,
+      0.13117025977780467
+     ],
+     "faster": 0.0872039589961117,
+     "faster_ci95": [
+      0.0720054340393174,
+      0.10385117962994699
+     ],
+     "slower": 0.025733474726051607,
+     "slower_ci95": [
+      0.020472047862015032,
+      0.03223219195049383
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 22,
+      "3 days + forensic triage -> 14 days": 11,
+      "60 days -> next upgrade": 717,
+      "next upgrade -> 60 days": 2445
+     }
+    },
+    "sensitivity_vulncheck_actual_vs_nvd": {
+     "n": 28290,
+     "changed": 0.1582184517497349,
+     "changed_ci95": [
+      0.13936627234673937,
+      0.17899883982478118
+     ],
+     "faster": 0.11046306115235065,
+     "faster_ci95": [
+      0.09230386608600608,
+      0.1309981297205676
+     ],
+     "slower": 0.047755390597384234,
+     "slower_ci95": [
+      0.04056398056907497,
+      0.055441398690084985
+     ],
+     "transitions": {
+      "14 days -> 3 days + forensic triage": 22,
+      "3 days + forensic triage -> 14 days": 31,
+      "60 days -> next upgrade": 1320,
+      "next upgrade -> 60 days": 3103
+     }
+    }
+   },
+   "by_cna_main": {
+    "VulDB": {
+     "n": 8435,
+     "changed": 0.25085951393005335,
+     "faster": 0.23141671606401898,
+     "slower": 0.01944279786603438
+    },
+    "GitHub_M": {
+     "n": 5959,
+     "changed": 0.1995301225037758,
+     "faster": 0.1738546736029535,
+     "slower": 0.025675448900822285
+    },
+    "cisco": {
+     "n": 2208,
+     "changed": 0.057971014492753624,
+     "faster": 0.04528985507246377,
+     "slower": 0.012681159420289856
+    },
+    "ibm": {
+     "n": 1325,
+     "changed": 0.28226415094339624,
+     "faster": 0.26339622641509436,
+     "slower": 0.018867924528301886
+    },
+    "zdi": {
+     "n": 1164,
+     "changed": 0.02663230240549828,
+     "faster": 0.01718213058419244,
+     "slower": 0.009450171821305841
+    },
+    "icscert": {
+     "n": 960,
+     "changed": 0.175,
+     "faster": 0.14479166666666668,
+     "slower": 0.030208333333333334
+    },
+    "talos": {
+     "n": 935,
+     "changed": 0.38181818181818183,
+     "faster": 0.2288770053475936,
+     "slower": 0.15294117647058825
+    },
+    "mitre": {
+     "n": 761,
+     "changed": 0.32982917214191854,
+     "faster": 0.3035479632063075,
+     "slower": 0.026281208935611037
+    },
+    "oracle": {
+     "n": 761,
+     "changed": 0.04730617608409987,
+     "faster": 0.04730617608409987,
+     "slower": 0.0
+    },
+    "dell": {
+     "n": 722,
+     "changed": 0.08587257617728532,
+     "faster": 0.0817174515235457,
+     "slower": 0.004155124653739612
+    },
+    "@huntrdev": {
+     "n": 694,
+     "changed": 0.19596541786743515,
+     "faster": 0.1239193083573487,
+     "slower": 0.07204610951008646
+    },
+    "fortinet": {
+     "n": 590,
+     "changed": 0.14067796610169492,
+     "faster": 0.12542372881355932,
+     "slower": 0.015254237288135594
+    }
+   }
+  }
+ }
+}

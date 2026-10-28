@@ -1,0 +1,62 @@
+{
+ "d4_size": 25377,
+ "v4_sources_top5": {
+  "cna@vuldb.com": 11254,
+  "disclosure@vulncheck.com": 4100,
+  "security-advisories@github.com": 3011,
+  "ics-cert@hq.dhs.gov": 618,
+  "productcert@siemens.com": 547
+ },
+ "settings": {
+  "cross-source: NVD v3.1 with CNA v4.0": {
+   "n": 15329,
+   "vuldb_share": 0.4533890012394807,
+   "band_acc": 0.4552808402374584,
+   "under_rate": 0.04879639898232109,
+   "exact": 0.1281231652423511
+  },
+  "same-source: CNA v3.1 with CNA v4.0": {
+   "n": 18217,
+   "vuldb_share": 0.6177746061371246,
+   "band_acc": 0.9623428665532195,
+   "under_rate": 0.004446396223307899,
+   "exact": 0.8106164571554043
+  },
+  "same-source, without VulDB": {
+   "n": 6963,
+   "vuldb_share": 0.0,
+   "band_acc": 0.9019100962228924,
+   "under_rate": 0.01120206807410599,
+   "exact": 0.5694384604337211
+  },
+  "strict pairing: NVD v3.1": {
+   "n": 8310,
+   "vuldb_share": 0.8363417569193743,
+   "band_acc": 0.2998796630565584,
+   "under_rate": 0.009386281588447653,
+   "exact": 0.05030084235860409
+  },
+  "strict pairing: CNA v3.1": {
+   "n": 8310,
+   "vuldb_share": 0.8363417569193743,
+   "band_acc": 0.9849578820697954,
+   "under_rate": 0.003128760529482551,
+   "exact": 0.8753309265944645
+  },
+  "strict pairing without VulDB: NVD v3.1": {
+   "n": 1360,
+   "vuldb_share": 0.0,
+   "band_acc": 0.6507352941176471,
+   "under_rate": 0.052941176470588235,
+   "exact": 0.15441176470588236
+  },
+  "strict pairing without VulDB: CNA v3.1": {
+   "n": 1360,
+   "vuldb_share": 0.0,
+   "band_acc": 0.9102941176470588,
+   "under_rate": 0.016911764705882352,
+   "exact": 0.5441176470588235
+  }
+ },
+ "strict_pairs_identical_v31": 0.06233453670276775
+}

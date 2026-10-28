@@ -1,0 +1,106 @@
+{
+ "VulDB": {
+  "type": "derived",
+  "fd_oos_pre2026": 0.9297413793103448,
+  "fd_oos_pre2026_ci95": [
+   0.9186150773813953,
+   0.9394468490425056
+  ],
+  "n_pairs_pre2026": 7731,
+  "power": true
+ },
+ "GitHub_M": {
+  "type": "v4_only",
+  "n_v4_pre2026": 1529
+ },
+ "VulnCheck": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.4084507042253521,
+  "fd_oos_pre2026_ci95": [
+   0.30168552002378446,
+   0.5246142918455503
+  ],
+  "n_pairs_pre2026": 236,
+  "power": true
+ },
+ "siemens": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.7707006369426752,
+  "fd_oos_pre2026_ci95": [
+   0.698945949196841,
+   0.8295242973065513
+  ],
+  "n_pairs_pre2026": 523,
+  "power": false
+ },
+ "icscert": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.6611570247933884,
+  "fd_oos_pre2026_ci95": [
+   0.5730213220975752,
+   0.7393745459464102
+  ],
+  "n_pairs_pre2026": 401,
+  "power": false
+ },
+ "intel": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.4765625,
+  "fd_oos_pre2026_ci95": [
+   0.3919872293426451,
+   0.5625036142150788
+  ],
+  "n_pairs_pre2026": 424,
+  "power": false
+ },
+ "INCIBE": {
+  "type": "v4_only",
+  "n_v4_pre2026": 369
+ },
+ "CERT-PL": {
+  "type": "v4_only",
+  "n_v4_pre2026": 204
+ },
+ "juniper": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.5166666666666667,
+  "fd_oos_pre2026_ci95": [
+   0.39307594850843575,
+   0.6382515871422999
+  ],
+  "n_pairs_pre2026": 199,
+  "power": false
+ },
+ "qnap": {
+  "type": "v4_only",
+  "n_v4_pre2026": 186
+ },
+ "Liferay": {
+  "type": "v4_only",
+  "n_v4_pre2026": 145
+ },
+ "ABB": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.375,
+  "fd_oos_pre2026_ci95": [
+   0.2293366846595921,
+   0.5474589941047487
+  ],
+  "n_pairs_pre2026": 105,
+  "power": false
+ },
+ "twcert": {
+  "type": "undetected",
+  "fd_oos_pre2026": 0.8333333333333334,
+  "fd_oos_pre2026_ci95": [
+   0.6810888526532568,
+   0.9212965937143589
+  ],
+  "n_pairs_pre2026": 117,
+  "power": false
+ },
+ "palo_alto": {
+  "type": "v4_only",
+  "n_v4_pre2026": 103
+ }
+}

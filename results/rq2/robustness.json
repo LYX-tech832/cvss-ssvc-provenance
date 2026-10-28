@@ -1,0 +1,259 @@
+{
+ "equal_weight_per_cna": {
+  "at least 30 test CVEs, all CNAs": {
+   "n_cnas": 60,
+   "n_cves": 20550,
+   "pipeline_band_acc": 0.5329592911396229,
+   "models": {
+    "TF-IDF + LR": {
+     "band_acc": 0.5066695243564239,
+     "diff": -0.026289766783198987,
+     "ci95": [
+      -0.05296121389678885,
+      0.004878771685706788
+     ],
+     "cnas_where_model_higher": 18
+    },
+    "DeBERTa-v3-base": {
+     "band_acc": 0.5155670994414066,
+     "diff": -0.017392191698216264,
+     "ci95": [
+      -0.04352274912446445,
+      0.012885556657557055
+     ],
+     "cnas_where_model_higher": 19
+    },
+    "SecureBERT": {
+     "band_acc": 0.5123060387478353,
+     "diff": -0.020653252391787575,
+     "ci95": [
+      -0.046148884884850666,
+      0.008319182682069985
+     ],
+     "cnas_where_model_higher": 21
+    }
+   }
+  },
+  "at least 30 test CVEs, without VulDB": {
+   "n_cnas": 59,
+   "n_cves": 15399,
+   "pipeline_band_acc": 0.5327364392617917,
+   "models": {
+    "TF-IDF + LR": {
+     "band_acc": 0.4999400583648275,
+     "diff": -0.032796380896964156,
+     "ci95": [
+      -0.058596343865499,
+      -0.006595341493985498
+     ],
+     "cnas_where_model_higher": 17
+    },
+    "DeBERTa-v3-base": {
+     "band_acc": 0.5090298995862613,
+     "diff": -0.023706539675530235,
+     "ci95": [
+      -0.04770503178112303,
+      0.001940598207319952
+     ],
+     "cnas_where_model_higher": 18
+    },
+    "SecureBERT": {
+     "band_acc": 0.5057872729514624,
+     "diff": -0.02694916631032931,
+     "ci95": [
+      -0.05167848093939744,
+      -0.002200634761050351
+     ],
+     "cnas_where_model_higher": 20
+    }
+   }
+  },
+  "at least 100 test CVEs, all CNAs": {
+   "n_cnas": 22,
+   "n_cves": 18563,
+   "pipeline_band_acc": 0.5093828691265804,
+   "models": {
+    "TF-IDF + LR": {
+     "band_acc": 0.5227278279327016,
+     "diff": 0.013344958806121148,
+     "ci95": [
+      -0.04283629430578359,
+      0.0814841296126013
+     ],
+     "cnas_where_model_higher": 10
+    },
+    "DeBERTa-v3-base": {
+     "band_acc": 0.5256390347934813,
+     "diff": 0.016256165666900732,
+     "ci95": [
+      -0.04027571307018574,
+      0.07401281240243177
+     ],
+     "cnas_where_model_higher": 10
+    },
+    "SecureBERT": {
+     "band_acc": 0.5271673218915741,
+     "diff": 0.017784452764993464,
+     "ci95": [
+      -0.03436328726155002,
+      0.07554361981115958
+     ],
+     "cnas_where_model_higher": 10
+    }
+   }
+  },
+  "at least 100 test CVEs, without VulDB": {
+   "n_cnas": 21,
+   "n_cves": 13412,
+   "pipeline_band_acc": 0.5076340747072907,
+   "models": {
+    "TF-IDF + LR": {
+     "band_acc": 0.5045859141266108,
+     "diff": -0.0030481605806800312,
+     "ci95": [
+      -0.05953679942694688,
+      0.059045864644268184
+     ],
+     "cnas_where_model_higher": 9
+    },
+    "DeBERTa-v3-base": {
+     "band_acc": 0.5077522321219816,
+     "diff": 0.00011815741469085541,
+     "ci95": [
+      -0.052836890524927,
+      0.05458193796753571
+     ],
+     "cnas_where_model_higher": 9
+    },
+    "SecureBERT": {
+     "band_acc": 0.5095603743276567,
+     "diff": 0.0019262996203658028,
+     "ci95": [
+      -0.04579600303089365,
+      0.04805280217341393
+     ],
+     "cnas_where_model_higher": 9
+    }
+   }
+  }
+ },
+ "validation_selected_C": {
+  "validation_macro_f1": {
+   "classifier": {
+    "0.25": 0.5711157790368039,
+    "1": 0.6257464961176981,
+    "4": 0.6612713416102375,
+    "16": 0.6675448083857785,
+    "64": 0.6646784537002864,
+    "256": 0.6648340005943889
+   },
+   "pipeline_first_stage": {
+    "1": 0.7788590441882928,
+    "4": 0.7837627453233529,
+    "16": 0.780697685534036
+   }
+  },
+  "selected": {
+   "classifier_C": 16.0,
+   "pipeline_C": 4.0,
+   "all": {
+    "diff": 0.06534246575342466,
+    "ci95": [
+     0.05817123287671233,
+     0.07310502283105023
+    ]
+   },
+   "non_derived": {
+    "diff": -0.021434115469580274,
+    "ci95": [
+     -0.02955400322407308,
+     -0.01307540748701415
+    ]
+   }
+  },
+  "all_pairs": {
+   "classifier C=0.25 vs pipeline C=1": {
+    "all": -0.021278538812785408,
+    "non_derived": -0.11988775449280553
+   },
+   "classifier C=0.25 vs pipeline C=4": {
+    "all": -0.013515981735159777,
+    "non_derived": -0.1220968416024838
+   },
+   "classifier C=0.25 vs pipeline C=16": {
+    "all": 0.006803652968036533,
+    "non_derived": -0.11332019822078931
+   },
+   "classifier C=1 vs pipeline C=1": {
+    "all": 0.023424657534246607,
+    "non_derived": -0.06430234640874077
+   },
+   "classifier C=1 vs pipeline C=4": {
+    "all": 0.031187214611872238,
+    "non_derived": -0.06651143351841904
+   },
+   "classifier C=1 vs pipeline C=16": {
+    "all": 0.05150684931506855,
+    "non_derived": -0.057734790136724556
+   },
+   "classifier C=4 vs pipeline C=1": {
+    "all": 0.046484018264840166,
+    "non_derived": -0.03409158755746611
+   },
+   "classifier C=4 vs pipeline C=4": {
+    "all": 0.0542465753424658,
+    "non_derived": -0.03630067466714437
+   },
+   "classifier C=4 vs pipeline C=16": {
+    "all": 0.0745662100456621,
+    "non_derived": -0.02752403128544989
+   },
+   "classifier C=16 vs pipeline C=1": {
+    "all": 0.057579908675799096,
+    "non_derived": -0.01922502835990203
+   },
+   "classifier C=16 vs pipeline C=4": {
+    "all": 0.06534246575342473,
+    "non_derived": -0.021434115469580295
+   },
+   "classifier C=16 vs pipeline C=16": {
+    "all": 0.08566210045662104,
+    "non_derived": -0.012657472087885813
+   },
+   "classifier C=64 vs pipeline C=1": {
+    "all": 0.05899543378995431,
+    "non_derived": -0.015403904710728944
+   },
+   "classifier C=64 vs pipeline C=4": {
+    "all": 0.06675799086757994,
+    "non_derived": -0.01761299182040721
+   },
+   "classifier C=64 vs pipeline C=16": {
+    "all": 0.08707762557077625,
+    "non_derived": -0.008836348438712727
+   },
+   "classifier C=256 vs pipeline C=1": {
+    "all": 0.057853881278538855,
+    "non_derived": -0.0164785957370589
+   },
+   "classifier C=256 vs pipeline C=4": {
+    "all": 0.06561643835616449,
+    "non_derived": -0.018687682846737164
+   },
+   "classifier C=256 vs pipeline C=16": {
+    "all": 0.0859360730593608,
+    "non_derived": -0.009911039465042681
+   }
+  },
+  "all_pairs_range": {
+   "all": [
+    -0.021278538812785408,
+    0.08707762557077625
+   ],
+   "non_derived": [
+    -0.1220968416024838,
+    -0.008836348438712727
+   ]
+  }
+ }
+}

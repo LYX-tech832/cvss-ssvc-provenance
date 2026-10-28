@@ -1,0 +1,11 @@
+{
+ "source": "cves.zip",
+ "source_sha256": "be7b74fe3a8c1a9e8d4658f44b3e7aea914534767d89a0703ec0393ee3eccab9",
+ "rows": 379060,
+ "unparsable_files": 0,
+ "with_ssvc": 190993,
+ "with_cna_v3": 152041,
+ "with_cna_v4": 37997,
+ "with_cisa_v3": 42491,
+ "kev": 1711
+}

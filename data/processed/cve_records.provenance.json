@@ -1,0 +1,12 @@
+{
+ "source_file": "2026-09-25_all_CVEs_at_midnight.zip.zip",
+ "source_sha256": "35f620251bc2efadd11fca5316085be0e729043af8b61e96b65347007ef7b97e",
+ "json_files": 397443,
+ "published_records": 379060,
+ "skipped_not_published": 18383,
+ "parse_errors": 0,
+ "with_cna_v40": 37997,
+ "with_cna_v31": 137079,
+ "with_adp_v40": 3,
+ "with_adp_v31": 43371
+}
